@@ -3,6 +3,14 @@ import '@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js'
 import '@webcomponents/custom-elements/custom-elements.min.js'
 import FLStyle from './floatingLabel.scss'
 
+function getPixel (val) {
+  const pixelVal = parseInt(val)
+  if (!isNaN(pixelVal) && pixelVal > 0) {
+    return pixelVal
+  } else {
+    return 50
+  }
+}
 export default class StarInput extends HTMLElement {
   constructor () {
     super()
@@ -18,6 +26,8 @@ export default class StarInput extends HTMLElement {
   }
 
   connectedCallback () {
+    const _self = this
+
     this.realInput = document.createElement('input')
     this.realInput.type = 'hidden'
     this.realInput.name = this.attributes.name === undefined ? undefined : this.attributes.name.value
@@ -34,6 +44,11 @@ export default class StarInput extends HTMLElement {
 
     // Style
     const styleElement = document.createElement('style')
+    styleElement.appendChild(
+      document.createTextNode(
+        `:host{--input-height: ${getPixel(_self.attributes.height?.value)}px;--icon-scale: ${48.0 / getPixel(_self.attributes.height?.value) / 2};}`
+      )
+    )
     styleElement.appendChild(document.createTextNode(FLStyle))
     this.shadowRoot.appendChild(styleElement)
 
@@ -71,6 +86,7 @@ export default class StarInput extends HTMLElement {
 
   updateHidePwd () {
     this.hidePwd = !this.hidePwd
+    this.shadowRoot.getElementById('floating-label-input').focus()
     this.updateStyle()
   }
 
