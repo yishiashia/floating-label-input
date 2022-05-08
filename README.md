@@ -53,16 +53,10 @@ class customizedFLInput extends FLInput {
 ```
 
 ### Options
-- [floating-label-input](#floating-label-input)
-  - [Install](#install)
-  - [Syntax](#syntax)
-  - [Demo page](#demo-page)
-  - [Usage](#usage)
-    - [Options](#options)
-      - [name](#name)
-      - [placeholder](#placeholder)
-      - [height (optional)](#height-optional)
-      - [type (optional)](#type-optional)
+- [name](#name)
+- [placeholder](#placeholder)
+- [height (optional)](#height-optional)
+- [type (optional)](#type-optional)
 
 #### name
 
