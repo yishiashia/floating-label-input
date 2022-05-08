@@ -1,6 +1,6 @@
 {
   "name": "@yishiashia/floating-label-input",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Floating label input WebComponent.",
   "main": "./dist/fl-input.js",
   "scripts": {

@@ -56,8 +56,10 @@ export default class StarInput extends HTMLElement {
     this.inputBlurred = this.inputBlurred.bind(this)
     this.updateStyle = this.updateStyle.bind(this)
     this.updateHidePwd = this.updateHidePwd.bind(this)
+    this.valueChange = this.valueChange.bind(this)
     this.shadowRoot.getElementById('floating-label-input').addEventListener('focus', this.inputFocused)
     this.shadowRoot.getElementById('floating-label-input').addEventListener('blur', this.inputBlurred)
+    this.shadowRoot.getElementById('floating-label-input').addEventListener('change', this.valueChange)
     this.shadowRoot.querySelectorAll('.eye-icon').forEach(element => {
       element.addEventListener('click', this.updateHidePwd)
     })
@@ -88,6 +90,13 @@ export default class StarInput extends HTMLElement {
     this.hidePwd = !this.hidePwd
     this.shadowRoot.getElementById('floating-label-input').focus()
     this.updateStyle()
+  }
+
+  valueChange () {
+    this.value_ = this.shadowRoot.getElementById('floating-label-input').value
+    if (this.realInput) {
+      this.realInput.value = this.value_
+    }
   }
 
   get type () {
