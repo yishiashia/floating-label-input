@@ -1,7 +1,7 @@
 # floating-label-input
 [![NPM](https://nodei.co/npm/@yishiashia/floating-label-input.png?mini=true)](https://www.npmjs.com/package/@yishiashia/floating-label-input)
 
-[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/floating-label-input)
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/@yishiashia/floating-label-input)
 
 
 Floating label input web component.
