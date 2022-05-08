@@ -1,0 +1,100 @@
+:host {
+    --input-height: 50px;
+    --icon-scale: 0.5;
+}
+
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+.floating-label {
+  border: 1px solid #ced4da;
+  position: relative;
+  height: var(--input-height);
+  display: flex;
+  border-radius: calc(var(--input-height) / 10);
+  overflow: hidden;
+  &.focused {
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+  }
+  .eye-icon {
+    display: inline-flex;
+    float: right;
+    height: var(--input-height);
+    cursor: pointer;
+    svg {
+        transform: scale(var(--icon-scale));
+    }
+  }
+  label {
+    position: absolute;
+    display: block;
+    text-transform: capitalize;
+    line-height: var(--input-height) !important;
+    top: 0px;
+    left: 14px;
+
+    font-weight: 400;
+    font-size: 16px;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    color: #879ab5;
+
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */
+
+    transition: all 0.1s ease-out;
+    transform-origin: left top;
+  }
+  input {
+    border: 0;
+    outline: 0;
+    // min-height: 56px;
+    min-height: calc(var(--input-height) * 0.66 - 1px);
+    flex-grow: 1;
+    &:focus {
+      border: 0;
+      outline: 0;
+      box-shadow: none;
+    }
+    font-weight: 400;
+    font-size: 16px;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #101f31;
+    height: 24px;
+    padding-top: calc(var(--input-height) * 0.33);
+    padding-left: 16px;
+
+    &:focus~label{
+      transform: translateY(-18%) scale(0.75);
+      opacity: .8;
+      color: #005ebf;
+      transition: all 0.1s ease-out;
+      transform-origin: left top;
+    }
+
+    &:valid~label{
+      transform-origin: left top;
+      transform: translateY(-18%) scale(0.75);
+      opacity: .8;
+      transition: all 0.1s ease-out;
+    }
+
+    &:not(:placeholder-shown)~label {
+      transform-origin: left top;
+      transform: translateY(-18%) scale(0.75);
+      opacity: .8;
+      transition: all 0.1s ease-out;
+    }
+  }
+}
