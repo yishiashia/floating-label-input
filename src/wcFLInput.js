@@ -11,7 +11,7 @@ function getPixel (val) {
     return 50
   }
 }
-export default class StarInput extends HTMLElement {
+export default class FLInput extends HTMLElement {
   constructor () {
     super()
 
