@@ -37,7 +37,7 @@ Floating label input web component.
 ```
 
 ## Demo page
-The demo page: https://yishiashia.github.io/fl-input.html
+The demo page: https://yishiashia.github.io/floating-label-input/
 ## Usage
 
 If you want to customize this web component, you can import the library and 
